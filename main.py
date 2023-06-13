@@ -7,7 +7,6 @@ def read_phonebook():
     with open("phonebook_raw.csv", encoding='utf-8') as f:
         rows = csv.reader(f, delimiter=",")
         contacts_list = list(rows)
-        # pprint(contacts_list)
         return(contacts_list)
 
 ## 1. Выполните пункты 1-3 задания.
@@ -100,7 +99,6 @@ def write_phonebook(list_phonebook):
 
 if __name__ == '__main__':
     contacts_list = read_phonebook()
-    print(contacts_list)
     phone = search_and_sub_phone(contacts_list)
     lastname, firstname, surname = search_full_name(contacts_list)
     email = search_email(contacts_list)
