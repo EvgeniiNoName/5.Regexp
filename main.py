@@ -1,6 +1,7 @@
 from pprint import pprint
 import re
 import csv
+from Decorators import logger
 
 ## Читаем адресную книгу в формате CSV в список contacts_list:
 def read_phonebook():
@@ -92,6 +93,7 @@ def union_date(phonebook):
 
 ## 2. Сохраните получившиеся данные в другой файл.
 ## Код для записи файла в формате CSV:
+@logger
 def write_phonebook(list_phonebook):
     with open("phonebook.csv", "w", encoding='utf-8', newline='') as f:
         datawriter = csv.writer(f, delimiter=',')
